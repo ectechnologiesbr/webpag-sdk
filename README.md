@@ -1,29 +1,21 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Este SDK auxilia desenvolvedores a integrar suas aplicações a API da Webpag.
 
-### What is this repository for? ###
+### Documentação Oficial ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* [Postman](https://www.postman.com/webpag/workspace/api/)
 
-### How do I get set up? ###
+### Funcionalidades ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Cadastro de Pagadores (Payer);
+* Cadastro de Pagamentos (Payments);
 
-### Contribution guidelines ###
+### ATENÇÃO ###
+Este SDK bem como a API estão em sua versão beta, ou seja, mudanças podem ser feitas a qualquer momento.
+Na dúvida entre em contato com o time de desenvolvimento.
 
-* Writing tests
-* Code review
-* Other guidelines
+### Contatos ###
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* webpag.com.br
+* emerson.lima@webpag.com.br

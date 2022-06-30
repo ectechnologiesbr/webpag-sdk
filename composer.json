@@ -1,0 +1,21 @@
+{
+    "name": "webpag/sdk-php",
+    "description": "SDK PHP da Webpag API (BETA).",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Webpag\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Edilson Cichon",
+            "email": "edilsoncichon@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}

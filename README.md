@@ -17,5 +17,8 @@ Na dúvida entre em contato com o time de desenvolvimento.
 
 ### Contatos ###
 
-* webpag.com.br
-* emerson.lima@webpag.com.br
+#### Webpag
+* [Website](https://webpag.com.br) | emerson.lima@webpag.com.br
+
+#### EC Technologies
+* [Website](https://ectechnologies.com.br) | edilson@ectechnologies.com.br

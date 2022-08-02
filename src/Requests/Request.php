@@ -1,10 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Webpag\Requests;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Webpag\Client;
 use Webpag\Entities\Entity;
+use Webpag\Exceptions\ApiException;
+use Webpag\Exceptions\UnauthenticatedException;
 use Webpag\Exceptions\ValidationException;
 
 abstract class Request
@@ -21,7 +25,15 @@ abstract class Request
 
     public abstract function endpoint(): string;
 
-    public function setEntity(Entity $entity): self
+    /**
+     * Parse the response body (json) to an Entity object.
+     *
+     * @param array $data Response body content.
+     * @return Entity
+     */
+    protected abstract function parseResponseToEntity(array $data): Entity;
+
+    protected function setEntity(Entity $entity): self
     {
         $this->entity = $entity;
         return $this;
@@ -35,24 +47,27 @@ abstract class Request
     /**
      * @throws GuzzleException
      * @throws ValidationException
+     * @throws UnauthenticatedException
+     * @throws ApiException
      */
-    public function send()
+    public function send(): Entity
     {
         $response = $this->client->send($this);
-        $bodyResponse = json_decode($response->getBody()->getContents(), true);
+
+        $data = json_decode($response->getBody()->getContents(), true);
 
         if ($response->getStatusCode() === 422) {
-            $e = new ValidationException($bodyResponse['message'] ?? 'Validation errors.', 422);
-            $e->setErrors($bodyResponse['errors'] ?? []);
+            $e = new ValidationException($data['message'] ?? 'Validation errors.', 422);
+            $e->setErrors($data['errors'] ?? []);
             throw $e;
         }
-
+        if ($response->getStatusCode() === 401) {
+            throw new UnauthenticatedException($data['message'] ?? 'Please check the "auth-token" header.');
+        }
         if ($response->getStatusCode() > 201) {
-            // 1. Erros gerais;
+            throw new ApiException($data['message'] ?? 'Server Error.');
         }
 
-        //Parsear a Response Sucessful;
-
-        //Retonar objeto;
+        return $this->parseResponseToEntity($data);
     }
 }

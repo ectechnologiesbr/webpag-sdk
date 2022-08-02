@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Webpag\Entities;
 
@@ -8,9 +10,9 @@ abstract class Entity implements JsonSerializable
 {
     protected array $attributes;
 
-    public function __construct()
+    public function __construct(array $attributes = [])
     {
-        $this->attributes = [];
+        $this->attributes = $attributes;
     }
 
     /**

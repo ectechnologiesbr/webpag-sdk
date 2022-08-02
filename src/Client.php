@@ -37,6 +37,7 @@ class Client
                 'headers' => [
                     'auth-token' => $this->authToken,
                     'Accept' => 'application/json',
+                    'Content-Type' => 'application/json',
                 ],
                 'http_errors' => false,
                 'body' => $request->bodyAsJson(),

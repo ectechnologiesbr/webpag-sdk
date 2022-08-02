@@ -2,10 +2,9 @@
 
 namespace Webpag\Exceptions;
 
-use Exception;
 use Throwable;
 
-class ValidationException extends Exception
+class ValidationException extends ApiException
 {
     protected array $errors = [];
 

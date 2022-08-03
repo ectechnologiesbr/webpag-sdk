@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 use Webpag\Exceptions\ApiException;
 use function Webpag\debug;
@@ -12,7 +10,7 @@ $payer->setAttribute('first_name', 'Edilson')
       ->setAttribute('last_name', 'Cichon')
       ->setAttribute('email', 'edilson@ectechnologies.com.br')
       ->setAttribute('is_business', true)
-      ->setAttribute('cpf_cnpj', '34.619.236/0001-22')
+      ->setAttribute('cpf_cnpj', '22.746.624/0001-95')
       ->setAttribute('use_boleto', true);
 
 try {

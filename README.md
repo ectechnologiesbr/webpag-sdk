@@ -1,6 +1,6 @@
 # README #
 
-Este SDK auxilia desenvolvedores a integrar suas aplicações a API da Webpag.
+Este SDK auxilia desenvolvedores a integrar as suas aplicações a API da Webpag.
 
 ### Documentação Oficial ###
 
@@ -8,11 +8,15 @@ Este SDK auxilia desenvolvedores a integrar suas aplicações a API da Webpag.
 
 ### Funcionalidades ###
 
-* Cadastro de Pagadores (Payer);
-* Cadastro de Pagamentos (Payments);
+* Cadastro de Pagadores; [Exemplo](./.doc/Payer_1_Register_Minimal.php)
+* Listagem Paginada de Pagadores; [Exemplo](./.doc/Payer_3_List_All.php)
+* [EM ANDAMENTO] Cadastro e Processamento de Pagamentos;
+* [TODO] Atualização de Pagadores;
+* [TODO] Filtrar Pagadores;
+* [TODO] Pagamentos Recorrentes;
 
 ### ATENÇÃO ###
-Este SDK bem como a API estão em sua versão beta, ou seja, mudanças podem ser feitas a qualquer momento.
+Este SDK bem como a API estão em versão beta, ou seja, mudanças podem ser feitas a qualquer momento.
 Na dúvida entre em contato com o time de desenvolvimento.
 
 ### Contatos ###

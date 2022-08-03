@@ -30,7 +30,10 @@ class RegisterPayerRequest extends Request
         return parent::setEntity($payer);
     }
 
-    protected function parseResponseToEntity(array $data): Entity
+    /**
+     * @inheritDoc
+     */
+    protected function parseResponse(array $data)
     {
         return new Payer($data['data'] ?? []);
     }

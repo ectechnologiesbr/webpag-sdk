@@ -6,7 +6,7 @@ namespace Webpag\Entities;
 
 use JsonSerializable;
 
-abstract class Entity implements JsonSerializable
+class Entity implements JsonSerializable
 {
     protected array $attributes;
 

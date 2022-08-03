@@ -30,18 +30,23 @@ class Client
     public function send(Request $request): ResponseInterface
     {
         $http = new Http();
+        $options = [
+            'headers' => [
+                'auth-token' => $this->authToken,
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+            ],
+            'http_errors' => false,
+            'body' => $request->method() !== 'GET'
+                 ? $request->bodyAsJson()
+                 : null,
+            'query' => $request->getQuery(),
+        ];
+
         return $http->request(
             $request->method(),
             $this->urlBase . $request->endpoint(),
-            [
-                'headers' => [
-                    'auth-token' => $this->authToken,
-                    'Accept' => 'application/json',
-                    'Content-Type' => 'application/json',
-                ],
-                'http_errors' => false,
-                'body' => $request->bodyAsJson(),
-            ]
+            $options,
         );
     }
 }

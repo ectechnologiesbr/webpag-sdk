@@ -17,11 +17,12 @@ class Entity implements JsonSerializable
 
     /**
      * @param string $attribute
+     * @param null $default
      * @return mixed|null
      */
-    public function getAttribute(string $attribute)
+    public function getAttribute(string $attribute, $default = null)
     {
-        return $this->attributes[$attribute] ?? null;
+        return $this->attributes[$attribute] ?? $default;
     }
 
     public function setAttribute(string $key, $value): self
@@ -35,4 +36,23 @@ class Entity implements JsonSerializable
         return $this->attributes;
     }
 
+    public function getAttributes(): array
+    {
+        return $this->attributes;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->getAttribute('id');
+    }
+
+    public function getCreatedAt(): ?string
+    {
+        return $this->getAttribute('created_at');
+    }
+
+    public function getUpdatedAt(): ?string
+    {
+        return $this->getAttribute('updated_at');
+    }
 }

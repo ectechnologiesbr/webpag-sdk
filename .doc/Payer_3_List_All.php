@@ -5,8 +5,10 @@ use function Webpag\debug;
 
 require "vendor/autoload.php";
 
+$authToken = '67e2014d-a9ac-4c9e-aa69-721defcb826c';
+
 try {
-    $client = new Webpag\Client('67e2014d-a9ac-4c9e-aa69-721defcb826c', true);
+    $client = new Webpag\Client($authToken, true);
 
     $request = new Webpag\Requests\ListPayersRequest($client);
 

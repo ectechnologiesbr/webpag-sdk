@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Webpag\Requests;
 
-use Webpag\Entities\Payer;
+use Webpag\Entities\Payment;
 
-class RegisterPayerRequest extends Request
+class RegisterPaymentRequest extends Request
 {
     public function method(): string
     {
@@ -15,18 +15,18 @@ class RegisterPayerRequest extends Request
 
     public function endpoint(): string
     {
-        return '/payers/register';
+        return '/payments/process';
     }
 
     /**
-     * Set Payer entity to the request body.
+     * Set Payment entity to the request body.
      *
-     * @param Payer $payer
+     * @param Payment $payment
      * @return Request
      */
-    public function setPayer(Payer $payer): Request
+    public function setPayment(Payment $payment): Request
     {
-        return parent::setEntity($payer);
+        return parent::setEntity($payment);
     }
 
     /**
@@ -34,6 +34,6 @@ class RegisterPayerRequest extends Request
      */
     protected function parseResponse(array $data)
     {
-        return new Payer($data['data'] ?? []);
+        return new Payment($data['data'] ?? []);
     }
 }

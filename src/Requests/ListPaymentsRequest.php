@@ -6,7 +6,7 @@ namespace Webpag\Requests;
 
 use Webpag\Entities\Paginator;
 
-class ListPayersRequest extends ListRequest
+class ListPaymentsRequest extends ListRequest
 {
     public function method(): string
     {
@@ -15,7 +15,7 @@ class ListPayersRequest extends ListRequest
 
     public function endpoint(): string
     {
-        return '/payers';
+        return '/payments';
     }
 
     /**

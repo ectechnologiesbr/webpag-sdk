@@ -35,6 +35,11 @@ class Paginator
         return $this->metadata['current_page'] ?? null;
     }
 
+    public function total(): ?int
+    {
+        return $this->metadata['total'] ?? null;
+    }
+
     public function lastPage(): ?int
     {
         return $this->metadata['last_page'] ?? null;
